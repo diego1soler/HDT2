@@ -3,16 +3,16 @@ import java.util.Vector;
 public class Pila implements I_Pila {
 	private Vector Pila;
 
-	//Hola
+	public Pila(){
+		Pila = new Vector();
+	}
 	@Override
 	public void push(Object element) {
-		
-		
+		Pila.addElement(element);
 	}
 
 	@Override
 	public Object pop() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
