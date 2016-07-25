@@ -1,11 +1,13 @@
-import java.io.FileNotFoundException;
+
 import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.File;
-
+/**
+ * @author Diego Soler, Gladys de la Roca, Rene Olivet
+ * Clase Calculadora
+ * Clase que maneja la calculadora
+ * @version 24/07/2016
+ */
 public class Calculadora implements I_Calculadora {
 
 	private Pila miPila;
@@ -16,40 +18,69 @@ public class Calculadora implements I_Calculadora {
 	
 	@Override
 	public int Calcular(String vector) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+		
+		int resultado = 0;
+		
+		String [] cadena = vector.split(" ");
+		for (int x = 0; x<cadena.length; x++){
+			
+			try{
+				miPila.Push(Integer.parseInt(cadena[x]));
+			}
+			
+			catch(Exception e){ 
+				
+				switch(cadena[x]) {
+				
+			
+				case "+":
+					resultado = (int)miPila.Pop() + (int)miPila.Pop();
+					miPila.Push(resultado);
+					break;
+					
+				case "*":
+					resultado = (int)miPila.Pop() * (int)miPila.Pop();
+					miPila.Push(resultado);
+					break;
+					
+				case "/":
+					resultado = (int)miPila.Pop() / (int)miPila.Pop();
+					miPila.Push(resultado);
+					break;
+				   }
+	             }	
+		      }
+		
+			return resultado;
+	       }
 
 	@Override
-	public void LeerArchivo(String direccion){
+	public String LeerArchivo(String direccion){
 		
 		File archivo = null;
 		FileReader fr = null;
-		
+		BufferedReader br = null;
+		String linea = "";
 		
 		try {
 		archivo = new File (direccion);
-		String linea;
 		fr = new FileReader (archivo);
-		BufferedReader br = new BufferedReader(fr);
+		br = new BufferedReader(fr);
+
 		
-		while((linea=br.readLine())!=null){
-		miPila.push(linea);
-			}
+		linea = br.readLine();
+			
 		
-		}//FIN DEL TRY
-		   catch(IOException e){
-		      System.out.println(e);
+			
+		
+				}//FIN DEL TRY
+		   catch(Exception e){
+		      System.err.println("El archivo está vacío. No hay ninguna instrucción");
 		     
 		   }
-		finally{
-		    try{ //el bloque finally se ejecuta siempre, por eso, si se cierra el fichero
-		    if( fr != null){ //al final del primer try, y ha dado un error antes, pasaría
-		     fr.close(); //al 1er catch y luego saldría, dejándolo abierto. Es conveniente
-		          } //Cerrarlo aquí, comprobando que no sea -por un error anterior, como
-		       }catch (IOException e){ // no tener permisos de lectura o que no exista - de valor null.
-		        }
-		}
+		
+		
+		return linea;
 	}
 	
 }

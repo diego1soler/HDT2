@@ -1,4 +1,9 @@
-
+/**
+ * @author Diego Soler, Gladys de la Roca, Rene Olivet
+ * Clase Main
+ * Main del programa
+ * @version 24/07/2016
+ */
 public class mainCalculadora {
 
 	public static void main(String[] args) {

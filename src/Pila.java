@@ -1,5 +1,10 @@
 import java.util.Vector;
-
+/**
+ * @author Diego Soler, Gladys de la Roca, Rene Olivet
+ * Clase Pila
+ * Clase que maneja la pila
+ * @version 24/07/2016
+ */
 public class Pila<E> implements I_Pila<E> {
 	private Vector<E> miPila;
 
