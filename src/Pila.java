@@ -1,24 +1,26 @@
 import java.util.Vector;
 
-public class Pila implements I_Pila {
-	private Vector Pila;
+public class Pila<E> implements I_Pila<E> {
+	private Vector<E> miPila;
 
 	public Pila(){
-		Pila = new Vector();
+		miPila = new Vector<E>();
 	}
 	@Override
-	public void push(Object element) {
-		Pila.addElement(element);
+	public void Push(E element) {
+		miPila.addElement(element);
 	}
 
 	@Override
-	public Object pop() {
-		return null;
+	public E Pop() {
+		E x=(E) miPila.lastElement();
+		miPila.remove(miPila.lastElement());
+		return x;
 	}
 
 	@Override
 	public boolean IsEmpty() {
-		if (Pila.size()==0)
+		if (miPila.size()==0)
 		return true;
 		else
 			return false;
@@ -26,12 +28,11 @@ public class Pila implements I_Pila {
 
 	@Override
 	public int Size() {
-		
-		return Pila.size();
+		return miPila.size();
 	}
 
 	@Override
-	public Object get() {
+	public E Get() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -1,10 +1,10 @@
 
-public interface I_Pila <T> {
+public interface I_Pila <E> {
 
-	public void push (T element);
-	public T pop();
+	public void Push (E element);
+	public E Pop();
 	public boolean IsEmpty();
 	public int Size();
-	public T get();
+	public E Get();
 	
 }
