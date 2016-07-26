@@ -8,6 +8,7 @@
 
 public interface I_Pila <E> {
 
+	//Metodos de la interfaz
 	public void Push (E element);
 	public E Pop();
 	public boolean IsEmpty();

@@ -5,17 +5,30 @@ import java.util.Vector;
  * Clase que maneja la pila
  * @version 24/07/2016
  */
+
 public class Pila<E> implements I_Pila<E> {
+	
+	//Atributos
 	private Vector<E> miPila;
 
+	//Constructor
 	public Pila(){
 		miPila = new Vector<E>();
 	}
+	
+	/**
+	*Agrega un elemento al stack
+	*@param E: element
+	*/
 	@Override
 	public void Push(E element) {
 		miPila.addElement(element);
 	}
 
+	/**
+	*Remueve el ultimo elemento del stack
+	*@return E 
+	*/
 	@Override
 	public E Pop() {
 		E x=(E) miPila.lastElement();
@@ -23,6 +36,10 @@ public class Pila<E> implements I_Pila<E> {
 		return x;
 	}
 
+	/**
+	*Verifica que la lista este vacia
+	*@return boolean
+	*/
 	@Override
 	public boolean IsEmpty() {
 		if (miPila.size()==0)
@@ -31,11 +48,19 @@ public class Pila<E> implements I_Pila<E> {
 			return false;
 	}
 
+	/**
+	*Retorna el tamano de la pila
+	*@return int
+	*/
 	@Override
 	public int Size() {
 		return miPila.size();
 	}
 
+	/**
+	*Obtiene un elemento del stack
+	*@return E
+	*/
 	@Override
 	public E Get() {
 		// TODO Auto-generated method stub

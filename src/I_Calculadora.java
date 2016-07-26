@@ -7,7 +7,7 @@
 
 public interface I_Calculadora {
 
-	
+	//Metodos de la interfaz
 	public int Calcular(String vector);
 	public String toString();
 	public String LeerArchivo (String direccion);
