@@ -4,7 +4,7 @@
  * Interfaz de la calculadora
  * @version 24/07/2016
  */
-//Nombre de la clase
+
 public interface I_Calculadora {
 
 	//Metodos de la interfaz

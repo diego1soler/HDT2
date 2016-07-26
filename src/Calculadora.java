@@ -9,7 +9,7 @@ import java.io.File;
  * @version 24/07/2016
  */
 
-//Nombre de la clase
+
 public class Calculadora implements I_Calculadora {
 	
 	//Atributos

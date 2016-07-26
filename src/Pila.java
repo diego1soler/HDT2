@@ -6,7 +6,7 @@ import java.util.Vector;
  * @version 24/07/2016
  */
 
-//Nombre de la clase
+
 public class Pila<E> implements I_Pila<E> {
 	
 	//Atributos

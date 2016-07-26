@@ -5,7 +5,6 @@
  * @version 24/07/2016
  */
 
-//Nombre de la clase
 public class mainCalculadora {
 
 	public static void main(String[] args) {
