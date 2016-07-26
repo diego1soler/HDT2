@@ -6,6 +6,7 @@
  * @version 24/07/2016
  */
 
+//Nombre de la clase
 public interface I_Pila <E> {
 
 	//Metodos de la interfaz
