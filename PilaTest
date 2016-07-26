@@ -1,0 +1,43 @@
+import junit.framework.TestCase;
+import org.junit.Test;
+
+public class PilaTest extends TestCase {
+	
+	@Test
+	public void TestIsEmpty() {
+		Pila s = new Pila();
+		s.IsEmpty();
+		boolean parametro = false;
+		boolean paramreal = s.IsEmpty();
+		assertEquals(parametro, paramreal);
+		s.IsEmpty();
+		boolean parametro1 = true;
+		boolean paramreal1 = s.IsEmpty();
+		assertEquals(parametro1, paramreal1);
+	}
+	
+	@Test
+    public void TestPush() {
+		Pila s = new Pila();
+        String parametro = "";
+        s.Push(parametro);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("Fallo.");
+    }
+
+    /**
+     * Test of pop method, of class iPila.
+     */
+    @Test
+    public void TestPop() {
+        Pila s = new Pila();
+        String parametro = "";
+        Object paramreal = s.Pop();
+        assertEquals(parametro, paramreal);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("Fallo");
+    }
+
+
+
+}
